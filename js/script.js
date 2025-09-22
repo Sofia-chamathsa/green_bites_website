@@ -44,3 +44,5 @@ subscribeBtn.addEventListener('click', () => {
   // Checking the local storage in your browser's Developer Tools 
   console.log("Email saved to local storage:", localStorage.getItem('subscribedEmail'));
 });
+
+
