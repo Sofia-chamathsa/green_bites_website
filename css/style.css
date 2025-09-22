@@ -115,13 +115,13 @@ body {
   margin-top: 1rem;
   font-size: 1.1rem;
   font-weight: 500;
-  color: #16a34a;
+  color: #0A4C23;
   width: 100%;
   height: 50px;
   margin-bottom: 15px;
   padding: 10px;
   border: 1px solid #ccc;
-  background: #d1eadb;
+  background: #fff;
   font-size: larger;
   font-family: Georgia, 'Times New Roman', Times, serif;
   text-align: center;
@@ -137,22 +137,22 @@ body {
 }
 
 .btn.primary { 
-  background: #25c149; 
+  background: #0F4D1D; 
   color: #fff; 
 }
 
 .btn.secondary { 
-  background: #f1aaaa; 
+  background: #841515; 
   color: #fff; 
 }
 
 .btn.tertiary { 
-  background: #25c149; 
+  background: #0F4D1D; 
   color: #fff; 
 }
 
 .btn.quartenary { 
-  background: #f1aaaa;
+  background: #841515;
   color: #fff; 
 }
 
@@ -242,13 +242,26 @@ footer {
 }
 
 /*Responiseveness*/
-.main {
-  float: left;
-  width: 60%;
+.container {
+  width: 80%;
+  margin: 0 auto;
 }
 
-@media screen and (max-width:800px) {
-  .left, .main, .right{
-    width: 100%;
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.columns {
+  display: flex;
+}
+
+.column {
+  flex: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .columns {
+    flex-direction: column; 
   }
 }
