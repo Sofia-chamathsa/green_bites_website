@@ -37,6 +37,41 @@ body {
   font-size: 1.2rem; 
 }
 
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 21px;
+  position: absolute;
+  right: 1rem;
+  top: 1.5rem;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
 .nav-links { 
   list-style: none; 
   display: flex; 
@@ -241,14 +276,135 @@ footer {
   margin-top: 2rem;
 }
 
-/*Responiseveness*/
-.main {
-  float: left;
-  width: 60%;
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+        flex-wrap: wrap;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        margin-top: 1rem;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    .nav-links a {
+        display: block;
+        padding: 12px;
+    }
+    
+    .intro {
+        padding: 30px 15px;
+    }
+    
+    .intro h1 {
+        font-size: 24px;
+    }
+    
+    .intro p {
+        font-size: 16px;
+    }
+    
+    #workoutForm {
+        margin: 20px 15px;
+        padding: 15px;
+    }
+    
+    .actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    #workout {
+        margin: 20px 15px;
+        padding: 15px;
+        font-size: medium;
+    }
+    
+    .timer-box {
+        margin: 20px 15px;
+        padding: 15px;
+    }
+    
+    .timer-controls {
+        flex-direction: column;
+    }
+    
+    .timer-controls button {
+        width: 100%;
+    }
+    
+    .featured {
+        padding: 2rem 1rem;
+    }
+    
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .card {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    footer {
+        padding: 1.5rem 1rem;
+    }
+    
+    .subscribe-box {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .subscribe-input {
+        width: 100%;
+        max-width: 300px;
+    }
 }
 
-@media screen and (max-width:800px) {
-  .left, .main, .right{
-    width: 100%;
-  }
+@media (max-width: 480px) {
+    .logo span {
+        font-size: 1rem;
+    }
+    
+    .intro h1 {
+        font-size: 22px;
+    }
+    
+    .intro p {
+        font-size: 15px;
+    }
+    
+    .timer {
+        font-size: 28px;
+    }
+    
+    .exercise {
+        font-size: 16px;
+    }
+    
+    .featured h2 {
+        font-size: 24px;
+    }
 }

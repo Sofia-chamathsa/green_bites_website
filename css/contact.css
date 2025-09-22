@@ -37,6 +37,41 @@ body {
   font-size: 1.2rem; 
 }
 
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 21px;
+  position: absolute;
+  right: 1rem;
+  top: 1.5rem;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
 .nav-links { 
   list-style: none; 
   display: flex; 
@@ -281,14 +316,117 @@ footer {
   margin-top: 2rem;
 }
 
-/*Responiseveness*/
-.main {
-  float: left;
-  width: 60%;
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 1rem;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        margin-top: 1rem;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .nav-links a {
+        display: block;
+        padding: 1rem;
+        width: 100%;
+    }
+    
+    .contact-form-section {
+        margin: 1rem auto;
+        padding: 1rem;
+    }
+    
+    .contact-form-section h1 {
+        font-size: 1.8rem;
+    }
+    
+    .faq-section {
+        margin: 1rem auto;
+        padding: 1rem;
+    }
+    
+    .faq-section h2 {
+        font-size: 1.3rem;
+    }
+    
+    .accordion-container {
+        padding: 0.5rem;
+    }
+    
+    .accordion-button {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+    
+    .map-container h2 {
+        font-size: 1.3rem;
+    }
+    
+    .subscribe-box {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .subscribe-input {
+        min-width: 200px;
+        width: 100%;
+        max-width: 300px;
+    }
 }
 
-@media screen and (max-width:800px) {
-  .left, .main, .right{
-    width: 100%;
-  }
+@media screen and (max-width: 480px) {
+    .logo span {
+        font-size: 1rem;
+    }
+    
+    .contact-form-section h1 {
+        font-size: 1.5rem;
+    }
+    
+    .contact-form-section p {
+        font-size: 0.9rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    
+    #submitBtn {
+        padding: 12px;
+        font-size: 1rem;
+    }
+    
+    footer {
+        padding: 1.5rem 1rem;
+    }
+    
+    footer h2 {
+        font-size: 1.1rem;
+    }
+    
+    footer p {
+        font-size: 0.9rem;
+    }
 }
