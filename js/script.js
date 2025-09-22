@@ -18,6 +18,26 @@ document.addEventListener("DOMContentLoaded", () => {
   tipElement.textContent = tipOfTheDay;
 });
 
+// Mobile menu toggle
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+}
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('active');
+  });
+});
+
+
 /*Newsletter subscribing*/
 // Getting a reference to the email input and the subscribe button
 const emailInput = document.querySelector('.subscribe-input');
